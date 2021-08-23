@@ -5,6 +5,7 @@ import * as contactsActions from '../contacts/contacts-actions.js';
 // axios.defaults.baseURL = 'http://localhost:7777';
 axios.defaults.baseURL = 'https://6120f07524d11c001762ee9f.mockapi.io';
 
+
 export const fetchContacts = () => async dispatch => {
   dispatch(contactsActions.fetchContactRequest());
   try {

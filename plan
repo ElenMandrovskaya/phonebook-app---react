@@ -1,0 +1,7 @@
+1. добавить app bar, UserMenu, pages
+2. routers
+2. переписать redux toolkit на слайсы
+3. перенести axios в apiservices
+4. сделать operations на asynk thunk
+5. добавление регистрации
+6. оформить интерфейс

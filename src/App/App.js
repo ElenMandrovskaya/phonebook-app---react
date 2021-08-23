@@ -1,15 +1,16 @@
 import { ToastContainer } from 'react-toastify';
-import { Main, Section, MainTitle } from './App.styled';
+import { Main, Section } from './App.styled';
 import { ContactForm } from "../components/ContactForm/ContactForm";
 import { ContactList } from "../components/ContactList/ContactList";
 import { Filter } from "../components/Filter/Filter";
 import { Title } from "../components/Title/Title";
+import { AppBar } from '../components/AppBar/AppBar';
 
 export default function App() {
 
   return (
     <>
-      <MainTitle>Phonebook</MainTitle>
+      <AppBar />
       <Main>
         <Section>
           <Title title={"Add contact"} />
