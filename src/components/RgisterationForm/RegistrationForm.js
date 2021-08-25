@@ -36,7 +36,11 @@ export function RegistrationForm() {
     };
     
     const handleSubmit = (evt) => {
-      evt.preventDefault();
+        evt.preventDefault();
+        if (!name || !email || !password) {
+            toast.info('Fill in all the fields')
+        return;
+      }
     //   dispatch(addContact({name, number}))
       resetForm();
    };
