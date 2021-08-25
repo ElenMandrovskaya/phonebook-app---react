@@ -5,6 +5,7 @@ import { ContactList } from "../components/ContactList/ContactList";
 import { Filter } from "../components/Filter/Filter";
 import { Title } from "../components/Title/Title";
 import { AppBar } from '../components/AppBar/AppBar';
+import { RegistrationForm } from '../components/RgisterationForm/RegistrationForm';
 
 export default function App() {
 
@@ -23,6 +24,9 @@ export default function App() {
         <Section>
           <Title title="Contacts"/>
           <ContactList />
+        </Section>
+        <Section>
+          <RegistrationForm />
         </Section>
       </Main>
       <ToastContainer />
