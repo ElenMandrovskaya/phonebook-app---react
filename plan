@@ -1,7 +1,7 @@
 1добавить app bar +
 regForm +
 UserMenu +
-login forn
+login forn +
 pages
 routers
 переписать redux toolkit на слайсы

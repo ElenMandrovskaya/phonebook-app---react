@@ -1,5 +1,9 @@
+
+// import { lazy, Suspense } from 'react';
+// import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
-import { Main, Section } from './App.styled';
+import 'react-toastify/dist/ReactToastify.css';
+import { Main } from './App.styled';
 import { ContactForm } from "../components/ContactForm/ContactForm";
 import { ContactList } from "../components/ContactList/ContactList";
 import { Filter } from "../components/Filter/Filter";
@@ -8,6 +12,7 @@ import { AppBar } from '../components/AppBar/AppBar';
 import { RegistrationForm } from '../components/RgisterationForm/RegistrationForm';
 import { UserMenu } from '../components/UserMenu/UserMenu';
 import { LoginForm } from '../components/LoginFrom/LoginForm';
+import { HomePage } from '../pages/Home';
 
 export default function App() {
 
@@ -15,21 +20,20 @@ export default function App() {
     <>
       <AppBar />
       <Main>
-        <Section>
+        <HomePage/>
           <Title title={"Add contact"} />
           <ContactForm/>
-        </Section>
-        <Section>
+
+
           <Title title="Search contact" />
           <Filter />
-        </Section>
-        <Section>
+
+
           <Title title="Contacts"/>
           <ContactList />
-        </Section>
-        <Section>
+
           <RegistrationForm />
-        </Section>
+
         <UserMenu />
         <LoginForm />
       </Main>
