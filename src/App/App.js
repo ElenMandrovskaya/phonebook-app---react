@@ -11,8 +11,8 @@ import { Title } from "../components/Title/Title";
 import { AppBar } from '../components/AppBar/AppBar';
 import { RegistrationForm } from '../components/RgisterationForm/RegistrationForm';
 import { UserMenu } from '../components/UserMenu/UserMenu';
-import { LoginForm } from '../components/LoginFrom/LoginForm';
 import { HomePage } from '../pages/Home';
+import { LoginPage } from '../pages/Login';
 
 export default function App() {
 
@@ -20,7 +20,8 @@ export default function App() {
     <>
       <AppBar />
       <Main>
-        <HomePage/>
+        <HomePage />
+        <LoginPage />
           <Title title={"Add contact"} />
           <ContactForm/>
 
@@ -35,7 +36,6 @@ export default function App() {
           <RegistrationForm />
 
         <UserMenu />
-        <LoginForm />
       </Main>
       <ToastContainer />
       </>
