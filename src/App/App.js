@@ -9,10 +9,10 @@ import { ContactList } from "../components/ContactList/ContactList";
 import { Filter } from "../components/Filter/Filter";
 import { Title } from "../components/Title/Title";
 import { AppBar } from '../components/AppBar/AppBar';
-import { RegistrationForm } from '../components/RgisterationForm/RegistrationForm';
 import { UserMenu } from '../components/UserMenu/UserMenu';
 import { HomePage } from '../pages/Home';
 import { LoginPage } from '../pages/Login';
+import { RegistrationPage } from '../pages/Registrations';
 
 export default function App() {
 
@@ -22,6 +22,7 @@ export default function App() {
       <Main>
         <HomePage />
         <LoginPage />
+        <RegistrationPage />
           <Title title={"Add contact"} />
           <ContactForm/>
 
@@ -32,8 +33,6 @@ export default function App() {
 
           <Title title="Contacts"/>
           <ContactList />
-
-          <RegistrationForm />
 
         <UserMenu />
       </Main>
