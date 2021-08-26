@@ -7,6 +7,7 @@ import { Title } from "../components/Title/Title";
 import { AppBar } from '../components/AppBar/AppBar';
 import { RegistrationForm } from '../components/RgisterationForm/RegistrationForm';
 import { UserMenu } from '../components/UserMenu/UserMenu';
+import { LoginForm } from '../components/LoginFrom/LoginForm';
 
 export default function App() {
 
@@ -30,6 +31,7 @@ export default function App() {
           <RegistrationForm />
         </Section>
         <UserMenu />
+        <LoginForm />
       </Main>
       <ToastContainer />
       </>
