@@ -2,7 +2,7 @@
 regForm +
 UserMenu +
 login forn +
-pages
+pages +
 routers
 переписать redux toolkit на слайсы
 перенести axios в apiservices
