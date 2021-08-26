@@ -10,8 +10,8 @@ export const UserEmail = styled.p`
 
 `;
 export const Avatar = styled.img`
-width: 80px;
-height: 80px;
+width: 30px;
+height: 30px;
 background-color: fuchsia;
 border-radius: 50%;
 margin: 0 auto;

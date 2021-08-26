@@ -11,8 +11,6 @@ export function ContactsPage() {
             <ContactForm />
             <Title title="Search contact" />
             <Filter />
-            <Title title="Yuor profile"/>
-            <UserMenu />
             <Title title="Contacts"/>
             <ContactList />
         </>

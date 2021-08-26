@@ -3,9 +3,13 @@ regForm +
 UserMenu +
 login forn +
 pages +
-routers
+
+public router
+private router
 переписать redux toolkit на слайсы
 перенести axios в apiservices
 сделать operations на asynk thunk
 добавление регистрации
+routers
+persist
 оформить интерфейс

@@ -4,7 +4,7 @@ export function UserMenu() {
     return (
         <UserContainer>
             <Avatar />
-            <UserName>Name</UserName>
+            <UserName>Welcome, Name</UserName>
             <UserEmail>example@gmail.com</UserEmail>
             <LogOutBtn>Log Out</LogOutBtn>
         </UserContainer>

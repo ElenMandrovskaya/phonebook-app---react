@@ -9,7 +9,7 @@ export function Navigation() {
                     exact
                     to="/"
                     className="navlink"
-                    activeClassName="activelink">
+                    activeClassName="activelogo">
                     Logo</NavLink>
             </NavItem>
             <NavItem>
@@ -22,17 +22,11 @@ export function Navigation() {
             </NavItem>
             <NavItem>
                 <NavLink
-                    to="/"
+                    exact
+                    to="/contacts"
                     className="navlink"
                     activeClassName="activelink">
-                    Registration</NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink
-                    to="/"
-                    className="navlink"
-                    activeClassName="activelink">
-                    Log in</NavLink>
+                    Contacts</NavLink>
             </NavItem>
         </NavList>
     )
