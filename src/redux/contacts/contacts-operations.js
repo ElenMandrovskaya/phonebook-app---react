@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import * as contactsActions from '../contacts/contacts-actions.js';
 
 // axios.defaults.baseURL = 'http://localhost:7777';
-axios.defaults.baseURL = 'https://6120f07524d11c001762ee9f.mockapi.io';
-
+// axios.defaults.baseURL = 'https://6120f07524d11c001762ee9f.mockapi.io';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export const fetchContacts = () => async dispatch => {
   dispatch(contactsActions.fetchContactRequest());
@@ -16,9 +16,9 @@ export const fetchContacts = () => async dispatch => {
   }
 };
 
-export const addContact = ({ name, number }) => dispatch => {
+export const addContact = ({ id, name, number }) => dispatch => {
     const contact = {
-    id: uuidv4(),
+    id,
     name,
     number,
   };

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { addContact } from '../../redux/contacts/contacts-operations';
 import { Form, Label, Input, Button } from '../ContactForm/ContactForm.styled';
+import * as authOperations from '../../redux/auth/auth-operaions';
 
 export function RegistrationForm() {
   const [name, setName] = useState("");
@@ -13,7 +13,7 @@ export function RegistrationForm() {
   const nameId = uuidv4();
   const emailId = uuidv4();
   const passwordId = uuidv4();
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   
   const handleChange = (evt) => {
     const { name, value } = evt.currentTarget;
@@ -41,7 +41,7 @@ export function RegistrationForm() {
             toast.info('Fill in all the fields')
         return;
       }
-    //   dispatch(addContact({name, number}))
+      dispatch(authOperations.register({ name, email, password }));
       resetForm();
    };
 
@@ -52,14 +52,14 @@ export function RegistrationForm() {
    };
   return (
       <Form onSubmit={handleSubmit}>
-        <Label htmlFor={nameId}> Name
+        <Label htmlFor={nameId}>
           <Input
             id={nameId}
             type="text"
             name="name"
             value={name}
             onChange={handleChange}
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
             placeholder="Yuor name"
             required
@@ -73,7 +73,7 @@ export function RegistrationForm() {
             name="email"
             value={email}
             onChange={handleChange}
-            pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
+            // pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
             title="Email может состоять из букв и цифр и представлен в формате example@gmail.com"
             placeholder="example@gmail.com"
             required

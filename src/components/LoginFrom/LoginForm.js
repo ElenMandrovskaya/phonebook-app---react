@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { addContact } from '../../redux/contacts/contacts-operations';
 import { Form, Label, Input, Button } from '../ContactForm/ContactForm.styled';
+import * as authOperations from '../../redux/auth/auth-operaions'
+
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const emailId = uuidv4();
   const passwordId = uuidv4();
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
   
   const handleChange = (evt) => {
     const { name, value } = evt.currentTarget;
@@ -36,7 +37,7 @@ export function LoginForm() {
             toast.info('Fill in all the fields')
         return;
       }
-    //   dispatch(addContact({name, number}))
+      dispatch(authOperations.login({ email, password }));
       resetForm();
    };
 
