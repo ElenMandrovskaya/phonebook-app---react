@@ -5,9 +5,6 @@ login forn +
 pages +
 routers +
 
-переписать redux toolkit на слайсы
-перенести axios в apiservices
-сделать operations на asynk thunk
 добавление регистрации
 
 public router

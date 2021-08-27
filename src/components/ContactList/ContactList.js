@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { List, Item, Button } from "./ContactList.styled";
 import { removeContact, fetchContacts } from "../../redux/contacts/contacts-operations";
 import { getAllContacts } from "../../redux/contacts/contacts-selectors";
-
+// import { useFetchContactsQuery, useRemoveContactMutation } from "../../services/contactApi";
 
 export function ContactList() {
     const dispatch = useDispatch();
