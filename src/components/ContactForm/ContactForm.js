@@ -3,9 +3,9 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { addContact } from '../../redux/contacts/contacts-operations';
 import { Form, Label, Input, Button } from "./ContactForm.styled";
 import { getContacts } from '../../redux/contacts/contacts-selectors'
+import * as contactOperations from "../../redux/contacts/contacts-operations";
 
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -48,7 +48,7 @@ export function ContactForm() {
       if (duplicateName) {
         return
       }
-      dispatch(addContact({name, number}))
+      dispatch(contactOperations.addContact({ name, number }))
       resetForm();
    };
 

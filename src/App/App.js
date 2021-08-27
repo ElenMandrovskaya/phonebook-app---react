@@ -1,4 +1,5 @@
-
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 // import { lazy, Suspense } from 'react';
 import { Route, Switch } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
@@ -9,8 +10,14 @@ import { HomePage } from '../pages/Home';
 import { LoginPage } from '../pages/Login';
 import { RegistrationPage } from '../pages/Registrations';
 import { ContactsPage } from '../pages/Contacts';
+import * as authOperations from '../redux/auth/auth-operaions';
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authOperations.getCurrentUser());
+  }, [dispatch]);
   return (
     <>
       <AppBar />

@@ -1,24 +1,32 @@
-// import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import * as contactOperations from './contacts-operations'
 
-// const contactsSlice = createSlice ({
-//     name: 'contacts',
-//     initialState: {
-//         items: [],
-//         filters: ""
-//     },
-//     reducers: {
-//         // fetchContact(state, action) {
-//         //     return action.payload },
-//         // addContact(state, action) {
-//         //     return [action.payload, ...state] },
-//         // removeContact(state, action) {
-//         //     const contacts = state.filter(item => item.id !== action.payload);
-//         //     return contacts},
-//         filterContact(state, action) {
-//             return action.payload }
-//     }
-// })
+const initialState = {
+    items: [],
+    filters: ""
+}
 
-// export default contactsSlice.reducer;
+const contactsSlice = createSlice ({
+    name: 'contacts',
+    initialState,
+    reducers: {
+        filterContact(state, action) {
+            state.filter = action.payload;
+        }
+    },
+    extraReducers: {
+        [contactOperations.getContacts.fulfilled](state, action) {
+            state.items = action.payload
+        },
+        [contactOperations.addContact.fulfilled](state, action) {
+            state.items.push(action.payload)
+        },
+        [contactOperations.removeContact.fulfilled](state, action) {
+            state.items = state.items.filter(({ id }) => id !== action.payload);
+        },
+
+    }
+})
+
+export default contactsSlice.reducer;
 // export const { filterContact } = contactsSlice.actions;
-// // console.log(contactsSlice.reducer)
