@@ -3,23 +3,25 @@ import * as contactOperations from './contacts-operations'
 
 const initialState = {
     items: [],
-    filters: ""
+    filter: ""
 }
 
 const contactsSlice = createSlice ({
     name: 'contacts',
     initialState,
     reducers: {
-        filterContact(state, action) {
+        filterContacts(state, action) {
             state.filter = action.payload;
         }
     },
     extraReducers: {
-        [contactOperations.getContacts.fulfilled](state, action) {
+        [contactOperations.fetchContacts.fulfilled](state, action) {
             state.items = action.payload
+            console.log(state.items)
         },
         [contactOperations.addContact.fulfilled](state, action) {
             state.items.push(action.payload)
+            // state.items = [...state.items, action.payload];  
         },
         [contactOperations.removeContact.fulfilled](state, action) {
             state.items = state.items.filter(({ id }) => id !== action.payload);
@@ -29,4 +31,4 @@ const contactsSlice = createSlice ({
 })
 
 export default contactsSlice.reducer;
-// export const { filterContact } = contactsSlice.actions;
+export const { filterContacts } = contactsSlice.actions;
