@@ -1,10 +1,11 @@
 
-import { NavList, NavItem } from "../Navigation/Navigation.styled";
+import { NavItem } from "../Navigation/Navigation.styled";
 import { NavLink } from "react-router-dom";
 
 export function AuthNav() {
     return (
-        <NavList>
+        // <NavList>
+        <>
             <NavItem>
                 <NavLink
                     to="/register"
@@ -18,7 +19,8 @@ export function AuthNav() {
                     className="navlink"
                     activeClassName="activelink">
                     Log in</NavLink>
-            </NavItem>
-        </NavList>
+                </NavItem>
+                </>
+        // </NavList>
     )
 }

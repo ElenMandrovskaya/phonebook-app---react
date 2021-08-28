@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import { authSelectors } from "../../redux/auth/auth-selectors";
 import { NavList, NavItem } from "./Navigation.styled";
 import { NavLink } from "react-router-dom";
+import { AuthNav } from "../AuthNav/AuthNav";
+import MenuBookIcon from '@material-ui/icons/MenuBook';
 
 export function Navigation() {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
@@ -13,7 +15,8 @@ export function Navigation() {
                     to="/"
                     className="navlink"
                     activeClassName="activelogo">
-                    Logo</NavLink>
+                    <MenuBookIcon style={{ fontSize: 50 }}/>
+                </NavLink>
             </NavItem>
             <NavItem>
                 <NavLink
@@ -23,14 +26,14 @@ export function Navigation() {
                     activeClassName="activelink">
                     Home</NavLink>
             </NavItem>
-            {isLoggedIn && <NavItem>
+            {isLoggedIn ? <NavItem>
                 <NavLink
                     exact
                     to="/contacts"
                     className="navlink"
                     activeClassName="activelink">
                     Contacts</NavLink>
-            </NavItem> }
+            </NavItem> : <AuthNav /> }
         </NavList>
     )
 }

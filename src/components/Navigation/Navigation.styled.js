@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const NavList = styled.ul`
 display: flex;
+align-items: center;
 @media screen and (min-width: 320px) {
     width: 320px;
     padding: 0 20px;
