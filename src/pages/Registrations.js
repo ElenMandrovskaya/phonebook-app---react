@@ -1,7 +1,7 @@
 import { RegistrationForm } from "../components/RgisterationForm/RegistrationForm";
 import { Title } from "../components/Title/Title";
 
-export function RegistrationPage() {
+export default function RegistrationPage() {
     return (
         <>
         <Title title="Sign up" />

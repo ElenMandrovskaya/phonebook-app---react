@@ -1,7 +1,7 @@
 import { HomeContainer, HomeImg, HomeText, MainTitle } from "../App/App.styled";
 import phoneContactImg from "../images/phone-call.jpeg"
 
-export function HomePage() {
+export default function HomePage() {
     return (
         <HomeContainer>
             <MainTitle>Phone book</MainTitle>
