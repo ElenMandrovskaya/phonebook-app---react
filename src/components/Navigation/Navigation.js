@@ -23,14 +23,14 @@ export function Navigation() {
                     activeClassName="activelink">
                     Home</NavLink>
             </NavItem>
-            {isLoggedIn ? <NavItem>
+            {isLoggedIn && <NavItem>
                 <NavLink
                     exact
                     to="/contacts"
                     className="navlink"
                     activeClassName="activelink">
                     Contacts</NavLink>
-            </NavItem> : ''}
+            </NavItem> }
         </NavList>
     )
 }

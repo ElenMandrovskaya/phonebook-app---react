@@ -46,9 +46,10 @@ export const logout = createAsyncThunk('auth/logout', async () => {
 export const getCurrentUser = createAsyncThunk('auth/current', async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
+    // console.log(persistedToken)
 
     if (persistedToken === null) {
-      console.log('Токена нет, уходим из fetchCurrentUser');
+    //   console.log('Токена нет, уходим из fetchCurrentUser');
       return thunkAPI.rejectWithValue();
     }
     token.set(persistedToken);

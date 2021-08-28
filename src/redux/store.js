@@ -28,10 +28,10 @@ const authPersistConfig = {
 };
 
 export const store = configureStore({
-    reducer: {
-        auth: persistReducer(authPersistConfig, authReducer),
+  reducer: {
+        contacts: contactsReducer, 
+        auth: persistReducer(authPersistConfig, authReducer)
         // contacts: rootReducer
-        contacts: contactsReducer        
     },
     middleware,
     devtools: process.env.NODE_ENV !== 'production'

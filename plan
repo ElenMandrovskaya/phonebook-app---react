@@ -4,10 +4,9 @@ UserMenu +
 login forn +
 pages +
 routers +
-
-добавление регистрации
-
-public router
-private router
-persist
+добавление регистрации +
+slice +
+public router +
+private router +
+persist +
 оформить интерфейс

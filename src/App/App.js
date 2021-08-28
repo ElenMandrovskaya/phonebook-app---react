@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 // import { lazy, Suspense } from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Main } from './App.styled';
@@ -11,6 +11,8 @@ import { LoginPage } from '../pages/Login';
 import { RegistrationPage } from '../pages/Registrations';
 import { ContactsPage } from '../pages/Contacts';
 import * as authOperations from '../redux/auth/auth-operaions';
+import PrivateRoute from '../routers/PrivateRouter';
+import PublicRoute from '../routers/PublicRouter';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -23,18 +25,22 @@ export default function App() {
       <AppBar />
       <Main>
         <Switch>
-          <Route exact path="/">
+
+          <PublicRoute exact path="/">
             <HomePage />
-          </Route>
-          <Route path="/register">
+          </PublicRoute>
+
+          <PublicRoute exact path="/register" restricted redirectedTo="/contacts">
             <RegistrationPage />
-          </Route>
-          <Route path="/login">
+          </PublicRoute>
+
+          <PublicRoute exact path="/login" restricted redirectedTo="/contacts">
             <LoginPage />
-          </Route>
-          <Route path="/contacts">
+          </PublicRoute>
+
+          <PrivateRoute path="/contacts" redirectedTo="/login">
             <ContactsPage />
-          </Route>
+          </PrivateRoute>
 
         </Switch>
       </Main>
