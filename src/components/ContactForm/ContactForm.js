@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Form, Label, Input, Button } from "./ContactForm.styled";
-import { getContacts } from '../../redux/contacts/contacts-selectors'
+import { getContacts } from '../../redux/contacts/contacts-selectors';
 import * as contactOperations from "../../redux/contacts/contacts-operations";
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -88,7 +89,7 @@ export function ContactForm() {
         </Label>
 
         <Button type="submit">
-          Add contact
+          Add contact <AddCircleOutlineIcon style={{ fontSize: 18, marginLeft: 5 }}/>
         </Button>
       </Form>
     );

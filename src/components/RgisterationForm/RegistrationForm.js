@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Form, Label, Input, Button } from '../ContactForm/ContactForm.styled';
 import * as authOperations from '../../redux/auth/auth-operaions';
+import DoneIcon from '@material-ui/icons/Done';
 
 export function RegistrationForm() {
   const [name, setName] = useState("");
@@ -93,7 +94,7 @@ export function RegistrationForm() {
         </Label>
 
         <Button type="submit">
-          Register
+          Register <DoneIcon style={{ fontSize: 20, marginLeft: 7 }}/>
         </Button>
       </Form>
     );

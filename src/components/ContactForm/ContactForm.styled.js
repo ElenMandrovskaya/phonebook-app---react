@@ -6,6 +6,7 @@ export const Form = styled.form`
 export const Label = styled.label`
 display: flex;
 flex-direction: column;
+margin: 0 auto;
 width: 400px;
 margin-bottom: 20px;
 `;
@@ -23,15 +24,20 @@ margin-top: 10px;
 `;
 
 export const Button = styled.button`
-  min-width: 100px;
+display: flex;
+align-items: center;
+justify-content: center;
+  width: 100px;
   height: 30px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 9px;
   color: #fff;
   text-transform: uppercase;
   background-color: #ff0d82;
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
   border: none;
-  
+  padding: 5px;
+  margin: 0 auto;
+  font-weight: 600;
 `;
