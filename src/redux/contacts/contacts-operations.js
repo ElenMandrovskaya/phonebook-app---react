@@ -1,9 +1,8 @@
 import axios from 'axios';
-// import { v4 as uuidv4 } from 'uuid';
-// import * as contactsActions from '../contacts/contacts-actions.js';
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-// axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 export const fetchContacts = createAsyncThunk('contacts/getcontacts', async () => {
     try {
