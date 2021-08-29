@@ -8,8 +8,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 export function ContactList() {
     const dispatch = useDispatch();
-    const contacts = useSelector(getFilteredContacts);
-
+    const contacts = useSelector(getFilteredContacts).sort((first, second) => first.name.localeCompare(second.name));
+    // console.log(contacts)
     useEffect(() => dispatch(contactOperations.fetchContacts()), [dispatch]);
 
     return (

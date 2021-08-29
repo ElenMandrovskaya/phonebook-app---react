@@ -14,7 +14,7 @@ const token = {
   },
 };
 
-export const register = createAsyncThunk('auth/register', async credentials => {
+export const register = createAsyncThunk('auth/register', async (credentials, thunkAPI) => {
     try {
         const { data } = await axios.post('/users/signup', credentials);
         token.set(data.token);
@@ -22,29 +22,32 @@ export const register = createAsyncThunk('auth/register', async credentials => {
         return data;
     }
     catch (error) {
-        toast.warning('Such an account already exists')
+        toast.warning('Such an account already exists');
+        return thunkAPI.rejectWithValue(error.message);
     }
 });
 
-export const login = createAsyncThunk('auth/logim', async credentials => {
+export const login = createAsyncThunk('auth/logim', async (credentials, thunkAPI) => {
     try {
         const { data } = await axios.post('users/login', credentials);
         token.set(data.token);
-        toast.warning('you are logged into your account')
+        toast.warning('You are logged into your account')
         return data;
     }
     catch (error) {
-        toast.warning('Something went wrong! Verify your the credentials')
+        toast.warning('Something went wrong! Verify your the credentials');
+        return thunkAPI.rejectWithValue(error.message);
     }
 });
 
-export const logout = createAsyncThunk('auth/logout', async () => {
+export const logout = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     try {
         token.unset();
-        toast.warning('you are logged out of your account')
+        toast.warning('You are logged out of your account')
     }
     catch (error) {
-        toast.warning('Something went wrong!')
+        toast.warning('Something went wrong!');
+        return thunkAPI.rejectWithValue(error.message);
     }
 });
 
@@ -62,6 +65,7 @@ export const getCurrentUser = createAsyncThunk('auth/current', async (_, thunkAP
         return data;
     }
     catch (error) {
-        toast.warning('Could not identify you')
+        toast.warning('Could not identify you');
+        return thunkAPI.rejectWithValue(error.message);
     }
 });
