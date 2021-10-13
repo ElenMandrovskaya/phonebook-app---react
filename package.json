@@ -1,5 +1,5 @@
 {
-  "name": "Phonebook-app---React",
+  "name": "goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -57,17 +57,5 @@
   },
   "devDependencies": {
     "netlify-cli": "^6.7.7"
-  },
-  "description": "## Tech Stack:  React | React Hooks | React Router | Redux Toolkit | Redux Persist | Redux Thunk | Emotion | Material-UI | Axios | React Spinners | React Toastify",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ElenMandrovskaya/Phonebook-app---React.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ElenMandrovskaya/Phonebook-app---React/issues"
-  },
-  "homepage": "https://github.com/ElenMandrovskaya/Phonebook-app---React#readme"
+  }
 }

@@ -29,5 +29,10 @@ justify-content: center;
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
   border: none;
   padding: 5px;
- 
+  &:hover {
+  background-color: #22c1c3;
+}
+&:focus {
+  background-color: #22c1c3;
+}
 `;

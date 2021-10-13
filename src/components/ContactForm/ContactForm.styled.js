@@ -19,14 +19,14 @@ font-size: 16px;
 margin-top: 10px;
 &:focus {
     outline: none;
-    border: 1px solid #9e1878;
+    border: 1px solid #22c1c3;
 }
 `;
 
 export const Button = styled.button`
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100px;
   height: 30px;
   border-radius: 4px;
@@ -40,4 +40,10 @@ justify-content: center;
   padding: 5px;
   margin: 0 auto;
   font-weight: 600;
+&:hover {
+  background-color: #22c1c3;
+}
+&:focus {
+  background-color: #22c1c3;
+}
 `;

@@ -8,7 +8,7 @@ export const Input = styled.input`
   margin-top: 10px;
   &:focus {
       outline: none;
-      border: 1px solid #9e1878;
+      border: 1px solid #22c1c3;
   }
 `;
 

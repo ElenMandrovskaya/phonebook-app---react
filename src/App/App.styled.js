@@ -16,7 +16,7 @@ align-items: center;
 margin: 0 auto;
 padding-top: 15px;
 padding-bottom: 15px;
-color: #9e1878;
+color: #22c1c3;
 `;
 
 export const HomeContainer = styled.div`
